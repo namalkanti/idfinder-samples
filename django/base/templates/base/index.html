@@ -1,0 +1,11 @@
+
+{% if card_data_list %}
+    <ul id="cards">
+    {% for card_data in card_data_list %}
+    <li><a href="{% url 'detail' card_data.id %}">{{ card_data.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No cards are available.</p>
+{% endif %}
+<a href="{% url 'main' %}">Back to main page</a>

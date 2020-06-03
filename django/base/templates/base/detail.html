@@ -1,0 +1,14 @@
+<h1>{{ carddata.name }}</h1>
+    <p>{{ carddata.id_number }}</p>
+    <img src="{{ MEDIA_URL }}{{ carddata.picture }}">
+<h2>Contact</h2>
+    <p>{{ carddata.contact.email }}</p>
+    <p>{{ carddata.contact.name }}</p>
+<h3>Mark Found</h3>
+    <form action="{% url 'found' carddata.id %}"  method="post">
+        {% csrf_token %}
+        {{ found_form }}
+        <input type="submit" value="submit"/>
+    </form>
+    <a href="{% url 'index' %}">Back to index</a>
+    <a href="{% url 'main' %}">Back to main page</a>
