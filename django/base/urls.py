@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views 
 
@@ -6,24 +8,9 @@ urlpatterns = [
         path("main", views.main, name="main"),
         path("index", views.IndexView.as_view(), name="index"),
         path("form", views.form, name="form"),
-        ]
-# from django.conf.urls import patterns, include, url
-
-# from django.contrib import admin
-
-# from . import views
-
-# urlpatterns = patterns('',
-#     # Examples:
-#     # url(r'^$', 'idfinder_django.views.home', name='home'),
-#     # url(r'^blog/', include('blog.urls')),
-
-#     url(r"^$", views.main, name="main"),
-#     url(r"^index", views.IndexView.as_view(), name="index"),
-#     url(r"^form/", views.form, name="form"),
-#     url(r"^success/", views.success, name="success"),
-#     url(r"^(?P<pk>[0-9]+)/$", views.DetailView.as_view(), name="detail"),
-#     url(r"^(?P<card_id>[0-9]+)/found/", views.found, name="found"),
-#     url(r"^(?P<card_id>[0-9]+)/correct", views.password_correct, name="password_correct"),
-#     url(r"^(?P<card_id>[0-9]+)/incorrect", views.password_incorrect, name="password_incorrect"),
-# )
+        path("success", views.success, name="success"),
+        path("<int:pk>", views.DetailView.as_view(), name="detail"),
+        path("<int:card_id>/found", views.found, name="found"),
+        path("<int:card_id>/correct", views.password_correct, name="password_correct"),
+        path("<int:card_id>/incorrect", views.password_incorrect, name="password_incorrect"),
+        ] 

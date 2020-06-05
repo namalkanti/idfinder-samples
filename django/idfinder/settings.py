@@ -121,5 +121,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Media variable definitions
-MEDIA_ROOT = "{0}/media".format(os.path.split(__file__)[0])
 MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")

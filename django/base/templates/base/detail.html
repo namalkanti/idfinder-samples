@@ -1,6 +1,6 @@
 <h1>{{ carddata.name }}</h1>
     <p>{{ carddata.id_number }}</p>
-    <img src="{{ MEDIA_URL }}{{ carddata.picture }}">
+    <img src="{{ carddata.picture.url }}">
 <h2>Contact</h2>
     <p>{{ carddata.contact.email }}</p>
     <p>{{ carddata.contact.name }}</p>
