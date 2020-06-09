@@ -1,0 +1,16 @@
+{
+    "1":{
+        "name": "John Smith",
+        "id_number": 12345,
+        "email": "dummy@gmail.com",
+        "passphrase": "password",
+        "active": true
+        },
+    "2":{
+        "name": "Jane Doe",
+        "id_number": 12346,
+        "email": "dummy@gmail.com",
+        "passphrase": "password",
+        "active": true
+        }
+}
